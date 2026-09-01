@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8fb">
+  <title>Meeting Cost Meter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="meter-card">
+    <header>
+      <p class="eyebrow">Meeting cost</p>
+      <div id="cost" class="cost" aria-live="polite">$0.00</div>
+      <div id="status" class="status"><span class="status-dot"></span><span>Ready to start</span></div>
+    </header>
+
+    <section class="stats" aria-label="Meeting details">
+      <div><span>Elapsed</span><strong id="elapsed">00:00:00</strong></div>
+      <div><span>Attendees</span><strong id="attendee-count">0</strong></div>
+      <div><span>Current rate</span><strong id="hourly-rate">$0.00/hr</strong></div>
+    </section>
+
+    <section class="attendees">
+      <div class="section-heading">
+        <h1>Who's in the meeting?</h1>
+        <button id="select-all" class="text-button" type="button">Select all</button>
+      </div>
+      <div id="employee-list" class="employee-list"></div>
+      <p id="minimum-message" class="minimum-message">Select at least 3 attendees to calculate meeting cost.</p>
+    </section>
+
+    <div class="actions">
+      <button id="start" class="button primary" type="button" disabled>Start</button>
+      <button id="pause" class="button secondary" type="button" disabled>Pause</button>
+      <button id="end" class="button secondary" type="button" disabled>End</button>
+      <button id="reset" class="button quiet" type="button">Reset</button>
+    </div>
+  </main>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
